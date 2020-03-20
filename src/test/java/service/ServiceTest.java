@@ -36,9 +36,16 @@ public class ServiceTest {
 
     @Test
     public void testAddStudent() {
-
         Student result = this.target.addStudent(student);
         assertNull(result);
+    }
+
+    @Test
+    public void testAddSameStudentTwice() {
+        Student result1 = this.target.addStudent(student);
+        Student result2 = this.target.addStudent(student);
+        assertNull(result1);
+        assertNotNull(result2);
     }
 
     @After
