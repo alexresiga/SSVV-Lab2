@@ -5,14 +5,13 @@ import domain.Student;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import repository.StudentFileRepository;
 import repository.StudentXMLRepo;
 import validation.StudentValidator;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 
 public class ServiceTest {
