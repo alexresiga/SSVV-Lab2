@@ -60,6 +60,48 @@ public class ServiceTest {
     }
 
     @Test(expected = ValidationException.class)
+    public void testAddStudentNullName(){
+        student.setNume(null);
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentNullId(){
+        student.setID(null);
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentNullEmail(){
+        student.setEmail(null);
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentEmptyEmail(){
+        student.setEmail("");
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentEmptyName(){
+        student.setNume("");
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentEmptyId(){
+        student.setID("");
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddStudentNonNaturalGroup(){
+        student.setGrupa(-23);
+        this.target.addStudent(student);
+    }
+
+    @Test(expected = ValidationException.class)
     public void testAddAssignmentInvalid() {
         this.target.addTema(invalidAssignment);
     }
