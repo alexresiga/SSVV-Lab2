@@ -115,6 +115,60 @@ public class ServiceTest {
         assertNull(result);
     }
 
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentNull() {
+      validAssignment = null;
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentIdNull() {
+      validAssignment.setID(null);
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentIdEmpty() {
+      validAssignment.setID("");
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentDescriptionNull() {
+      validAssignment.setDescriere(null);
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentDescriptionEmpty() {
+      validAssignment.setDescriere("");
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentDeadlineNegative() {
+      validAssignment.setDeadline(-1);
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentDeadlineTooBig() {
+      validAssignment.setDeadline(99);
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentPrimireTooBig() {
+      validAssignment.setPrimire(99);
+      this.target.addTema(validAssignment);
+    }
+
+    @Test(expected = ValidationException.class)
+    public void testAddAssignmentPrimireNegative() {
+      validAssignment.setPrimire(-1);
+      this.target.addTema(validAssignment);
+    }
+
     @After
     public void TearDown() {
         this.target.deleteStudent(STUDENT_ID);

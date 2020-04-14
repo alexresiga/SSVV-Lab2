@@ -11,10 +11,13 @@ public class TemaValidator implements Validator<Tema> {
      */
     @Override
     public void validate(Tema entity) throws ValidationException {
-        if(entity.getID().equals("") || entity.getID() == null) {
-            throw new ValidationException("Numar tema invalid!");
+        if (entity == null) {
+            throw new ValidationException("The entity cannot be null!");
         }
-        if(entity.getDescriere().equals("")){
+        if(entity.getID() == null || entity.getID().equals("")) {
+            throw new ValidationException("Id invalid!");
+        }
+        if(entity.getDescriere() == null || entity.getDescriere().equals("")){
             throw new ValidationException("Descriere invalida!");
         }
         if(entity.getDeadline() < 1 || entity.getDeadline() > 14) {
