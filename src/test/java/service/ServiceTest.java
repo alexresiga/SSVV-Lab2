@@ -12,8 +12,6 @@ import validation.StudentValidator;
 import validation.TemaValidator;
 import validation.ValidationException;
 
-import java.io.FileNotFoundException;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
