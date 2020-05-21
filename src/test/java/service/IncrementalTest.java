@@ -59,7 +59,7 @@ public class IncrementalTest {
     }
 
     @Test
-    public void testAddAssignmentValid() {
+    public void testAddAssignment() {
         // when
         Student resultStudent = this.target.addStudent(student);
         Tema result = this.target.addTema(validAssignment);
